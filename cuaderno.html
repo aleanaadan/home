@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuaderno · Aleana Adán Legarra</title>
+<meta name="description" content="El cuaderno de Aleana Adán Legarra: textos para leer despacio.">
+<meta name="theme-color" content="#2f4f38">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Shalimar";src:url(fonts/Shalimar-Regular.ttf) format("truetype");font-display:swap}
+:root{--bud:#79b465;--deep:#2f4f38;--ink:#27352b;--bg:#fbf8f1;--tint:#eaf2e3;--terra:#c0714f;--gold:#b8955a;--cream:#f3eedf;--paper:#fffdf7;--f-name:"Shalimar",cursive}
+*{box-sizing:border-box;margin:0}
+body{background:var(--tint);color:var(--ink);font:300 17px/1.7 "Josefin Sans","Avenir Next",Optima,sans-serif}
+h1,h2,h3,.ser{font-family:"Josefin Sans","Avenir Next",sans-serif;font-weight:300;letter-spacing:.02em;color:var(--deep)}
+a{color:var(--deep)}
+header{background:var(--bg);border-bottom:1px solid #dfe8d8;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:6px 24px;padding:10px 6vw}
+.logo{font-family:var(--f-name);font-size:2.1rem;line-height:1.1;text-decoration:none;color:var(--deep)}
+nav{display:flex;flex-wrap:wrap;gap:2px 20px}
+nav a{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--ink)}
+nav a:hover{color:var(--terra)}
+.top{text-align:center;padding:44px 6vw 22px}
+.sub{color:var(--terra);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase}
+.top h2{font-size:clamp(2.2rem,5vw,3.4rem)}.pg.relato p{font-size:.9rem;line-height:1.6}
+.verse{font:300 1.05rem/1.6 "Josefin Sans",sans-serif;color:var(--deep)}
+.wrap{padding:30px 3vw 20px;overflow:hidden;filter:drop-shadow(0 18px 22px rgba(47,79,56,.22))}
+.book{position:relative;width:min(900px,100%);aspect-ratio:7/5;margin:0 auto;perspective:2600px;transition:transform 1.5s cubic-bezier(.55,.06,.2,1);cursor:pointer}
+.book.c0{transform:translateX(-25%)}.book.c1{transform:translateX(25%)}
+.sheet{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;transition:transform 1.5s cubic-bezier(.55,.06,.2,1)}
+.sheet.f{transform:rotateY(-180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:34px 32px 38px;overflow:hidden;background:var(--paper)}
+.face:after{content:"";position:absolute;inset:12px;border:1px solid rgba(184,149,90,.35);pointer-events:none}
+.front{box-shadow:1px 0 0 #f1ecdf,2px 0 0 #dfd8c6,3px 0 0 #f1ecdf,4px 0 0 #d8d0bb;border-radius:0 6px 6px 0;background:linear-gradient(90deg,rgba(0,0,0,.1),transparent 9%),var(--paper)}
+.back{transform:rotateY(180deg);box-shadow:-1px 0 0 #f1ecdf,-2px 0 0 #dfd8c6,-3px 0 0 #f1ecdf,-4px 0 0 #d8d0bb;border-radius:6px 0 0 6px;background:linear-gradient(270deg,rgba(0,0,0,.1),transparent 9%),var(--paper)}
+.face.dk{background:var(--deep);color:#f3eedf}.face.dk:after{border-color:rgba(227,205,157,.6)}
+.face.dk .verse{color:#f3eedf}.face.dk h1{color:#e3cd9d}
+.in{height:100%;overflow:auto;padding:0 6px}
+.cen{height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
+.cen h1,.top h2{font-family:"Italiana","Josefin Sans",sans-serif;font-style:normal;font-weight:400;text-transform:uppercase;letter-spacing:.16em;line-height:1.1}.cen h1{font-size:clamp(2.2rem,5.5vw,3.4rem)}
+.cen img{height:210px;width:auto;margin-top:14px;opacity:.95}
+.cen .sub{color:#e3cd9d}
+.pg .tag{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--terra)}
+.pg h3{font-size:1.7rem;margin:4px 0 14px;line-height:1.2}
+.pg p{font-size:.92rem;margin-bottom:.8em;text-align:justify;hyphens:auto}
+.pg.poesia{padding:0 3%}.pg.poesia p{font:300 .98rem/1.65 "Josefin Sans",sans-serif;text-align:left;margin-bottom:.95em}
+.pg.prosa p{font:300 .95rem/1.65 "Josefin Sans",sans-serif;text-align:justify;hyphens:auto;margin-bottom:.9em}
+.i1,.i2,.i3{display:block}.i1{padding-left:2em}.i2{padding-left:4em}.i3{padding-left:6em}
+.num{position:absolute;bottom:18px;left:0;right:0;text-align:center;font:300 .95rem "Josefin Sans",sans-serif;color:var(--gold)}
+.btn{display:inline-block;padding:9px 20px;border:1px solid var(--deep);color:var(--deep);text-decoration:none;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;background:transparent;cursor:pointer;font-family:inherit}
+.btn:hover:not(:disabled){background:var(--deep);color:#fff}.btn:disabled{opacity:.35;cursor:default}
+.ctl{display:flex;justify-content:center;align-items:center;gap:22px;padding:26px 0 50px}
+.ctl span{font:300 1.1rem "Josefin Sans",sans-serif;min-width:90px;text-align:center}
+.single .sheet{left:0;width:100%}.single .front{border-radius:6px}
+.face:before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0}
+.front:before{background:linear-gradient(90deg,rgba(20,35,25,.32),rgba(20,35,25,0) 65%)}
+.back:before{background:linear-gradient(270deg,rgba(20,35,25,.32),rgba(20,35,25,0) 65%)}
+@keyframes shade{0%{opacity:0}45%{opacity:1}100%{opacity:0}}
+.sheet.turn .face:before{animation:shade 1.5s ease-in-out}
+@media(hover:hover){.book:not(.single) .sheet:not(.f):hover{transform:rotateY(-7deg)}.book:not(.single) .sheet.f:hover{transform:rotateY(-173deg)}}
+.book.lib{width:min(960px,100%);aspect-ratio:auto;perspective:none;transform:none!important;transition:none;cursor:default}
+.lpage{background:var(--paper);overflow:hidden}
+.lpage .in{position:relative;height:100%;overflow:hidden;padding:36px 34px 46px;font-size:17px}
+.lpage .in:after{content:"";position:absolute;inset:12px;border:1px solid rgba(184,149,90,.35);pointer-events:none}
+.lpage.dk{background:var(--deep);color:#f3eedf}.lpage.dk .in:after{border-color:rgba(227,205,157,.6)}.lpage.dk h1{color:#e3cd9d}.lpage.dk .verse{color:#f3eedf}.lpage.dk .sub{color:#e3cd9d}
+.lpage .cen img{height:210px;width:auto}
+.lpage .pg h3{font-size:1.7em;line-height:1.2}.lpage .pg p{font-size:.92em}.lpage .pg.poesia p{font-size:1em}.lpage .pg.prosa p{font-size:.96em}.lpage .pg.relato p{font-size:.9em}
+.lpage .verse{font-size:1.05em}.lpage .tag{font-size:.66em}.lpage .num{font-size:.95em}
+@media(max-width:720px){.book{aspect-ratio:3/4.8;width:min(440px,100%)}.pg h3{font-size:1.45rem}.face{padding:28px 24px 34px}}
+@media(prefers-reduced-motion:reduce){.sheet,.book{transition-duration:.01s}}
+
+footer{background:var(--deep);color:#dfe6dc;text-align:center;padding:54px 6vw 34px;font-size:.85rem}
+footer .th{font:300 1.05rem "Josefin Sans",sans-serif;letter-spacing:.1em;color:#fff}footer .th .fi{height:3.4em;width:auto;margin:0 auto 10px}
+footer .soc{margin:14px 0 22px;font-size:1.05rem;letter-spacing:.06em}footer .soc a{color:#e3cd9d;text-decoration:none;margin:0 11px}footer .soc a:hover{text-decoration:underline}
+footer .lg a{color:#cfd9cb;margin:0 8px;font-size:.78rem;letter-spacing:.08em}footer .cp{margin-top:14px;font-size:.78rem;opacity:.8}
+</style>
+<link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="favicon.png"></head>
+<body>
+<header><a class="logo" href="index.html">Aleana Adán Legarra</a><nav><a href="index.html#escritora">La escritora</a><a href="cuaderno.html">Cuaderno</a><a href="index.html#libros">Libros</a><a href="agenda.html">Agenda 2027</a><a href="index.html#persona">La persona</a><a href="index.html#fotografa">La fotógrafa</a><a href="index.html#contacto">Contacto</a></nav></header>
+
+<div class="top"><p class="sub">Substack</p><h2>Cuaderno</h2><p class="verse">Retazos de la belleza que me habita</p></div>
+
+<div class="wrap"><div id="book" class="book" aria-live="polite"></div>
+<div class="ctl"><button class="btn" id="pv" aria-label="Página anterior">← Anterior</button><span id="lab"></span><button class="btn" id="nx" aria-label="Página siguiente">Siguiente →</button></div></div>
+
+<!-- TEXTOS: cada <article class="pg"> es una página. Clases: "pg poesia" (poemas), "pg prosa" (poesía en prosa) y "pg relato" (relatos). Copia, pega, cambia y reordena. -->
+<div id="src" hidden>
+<article class="pg relato"><span class="tag">Relato</span><h3>Desintegrada</h3><p>Tengo un vago recuerdo de cómo comencé a desintegrarme, aunque el cuándo desapareció de mi cabeza en cuanto se desvaneció el último espacio lógico de mi cerebro.</p><p>La primera vez fue sutil, ¡me desapareció una oreja! Como tenemos dos y seguía escuchando, no me percaté hasta pasadas algunas horas del incidente. Recuerdo que estaba trabajando y me llamaron para que me encargase de las labores de una compañera que tenía un compromiso personal y no iba a poder hacerse cargo.</p></article>
+<article class="pg relato"><p>Yo estaba hasta arriba de trabajo y conocía bien los "compromisos personales" de esta compañera, que generalmente incluían al jefe del departamento en las horas de la merienda. Sin embargo, acepté sin rechistar, recordando a mi madre que siempre podía con todo.</p><p>Mi madre es de esas mujeres que, aunque esté en su peor momento, aunque la traten de manera poco amable, siempre tiene una sonrisa y buena disposición para complacer a cualquiera que venga a pedirle algo. Y así crecí yo, viéndola y escuchándola decir que sí a diestra y siniestra, aunque las más de las veces, casi inmediatamente, se entregase al llanto o a la ira.</p></article>
+<article class="pg relato"><p>La cosa es que aquel día al terminar mi jornada laboral, agotada tras haberme dedicado a trabajar por dos, quise escuchar una música suave para relajarme mientras iba de camino a casa y me encontré con que me faltaba la oreja izquierda.</p><p>Me palpé la cabeza frenéticamente, sin comprender cómo había podido ocurrir aquello. Busqué por todas partes esa oreja que durante tanto tiempo di por sentada, lloré, grité, vacié mi bolso en medio de la calle a ver si la encontraba escondida entre las páginas del libro que llevaba o en el estuche de los lentes, pero nada. Simplemente se había esfumado.</p></article>
+<article class="pg relato"><p>Pasó el tiempo y la impresión que me había causado aquel episodio también se desvaneció, quizás porque, entretanto, ya había perdido algunos dedos, la mitad de un pie, una pantorrilla y una teta. Me miraba al espejo y veía los retazos que le faltaban a este cuerpo y no sentía ya ninguna conmoción, dentro de mi cabeza todos los miembros perdidos parecían mantenerse en su sitio, como las extremidades “fantasmas” de los amputados. Me había acostumbrado a la pérdida de mi propio ser.</p><p>Seguí pasando por la vida asegurándome de mantener contentos a mis jefes, a mis amigos, a la pareja de turno y sobre todo a mi familia, aceptando y hasta agradeciendo todo lo que exigían de mí mientras iban alimentando la absurda necesidad de sentirme útil y la falsa certeza de ser imprescindible.</p></article>
+<article class="pg relato"><p>Cierta vez, volviendo del mercado a la casa que le estaba pagando al fulano de turno quien, como casi todos los días, hallábase cómodamente acostado en la cama que yo le había comprado leyendo alguna intensidad de Samuel Beckett, me di cuenta de que se me estaba desvaneciendo el corazón.</p><p>No era una sensación desagradable, al contrario, sentía como una efervescencia en el pecho, como cuando el Alka seltzer empieza a desintegrarse en el agua y comienzan a elevarse miles de burbujitas que se funden con el aire. Me sentí liviana, casi etérea, mientras acomodaba las cosas que le había comprado al fulano para que tuviera qué comer durante la semana.</p></article>
+<article class="pg relato"><p>Él apenas levantó la vista, con un dedo lánguido y su sonrisa burlona señaló el agujero que se empezaba a dibujar en mi pecho y volvió plácidamente a su lectura. Yo miré hacia abajo y también sonreí.</p><p>Terminé de colocar las cosas en la cocina, le preparé la cena y me despedí frente al único espejo que decoraba la entrada de la habitación. Salí a la oscuridad de la noche y caminé sin rumbo dejando a mi paso una estela como de espuma, como de escarcha, sintiendo cada vez más ligereza, casi completamente convertida en viento, confundiéndome con el sonido de las hojas de los árboles bailando al son de la brisa otoñal.</p><p>Esa fue la última vez que [me] sentí.</p></article>
+<article class="pg relato"><span class="tag">Newsletter · Manifestar la gratitud</span><h3>Pequeñas obsesiones</h3><p>Mi hija de cuatro años colecciona pequeñas obsesiones. Ella sólo quiere usar faldas y vestidos, “pero que no tengan faralaos, mamá”. Ella llega de la escuela y se pone su vestido de Elsa (sí, otra niña de cuatro años que respira Elsa, que come Elsa, que duerme Elsa y que sueña Elsa. A los tres su obsesión era Totoro) y me pide, sin dilación, que le haga una trenza, “pero de lado, mamá, y con la colita de brilli-brilli. Y yo me pongo los ganchitos y el cintillo”.</p><p>Ella revisa las etiquetas de cada una de sus prendas a ver si tienen el número 4. “Porque yo tengo cuatro años, ¿sabes?”. Agarra los pantalones y, como si de un cirujano se tratase, observa con seriedad y “lee” la etiqueta. “¡Mira, mamá, hay un 4!”, dice con una sorpresa tan alegre que siempre me encharca los ojos. Y va descartando a las pobres piezas que perdieron sus etiquetas en pro de la comodidad de su piel.</p></article>
+<article class="pg relato"><p>Ella me pide (casi a diario) que le cuente la misma historia de cuando yo era niña y me subí a una torre de tubos con mis amigas Mary y Vero (always love you, always missing you) usando unas cholas (chanclas) <em>Sofu</em> rosadas con las suelas azules. El cuento es que al llegar a lo más alto de aquella perniciosa torre, me resbalé y me caí hasta el suelo, dejando retazos de piel y pelos en los tornillos que unían la estructura. Una de mis cholitas no sobrevivió a la catástrofe y yo lloré por ella, por el dolor y por el regaño que sabía que me esperaba al llegar a casa, porque qué descuidada y porque cómo se te ocurre ir al parque en cholas.</p></article>
+<article class="pg relato"><p>Ella siempre se come primero las tajadas (cuando la diosa platanera nos permite encontrar ejemplares maduros), se come cuatro antes de empezar a comer, se pone cuatro en su plato, se le acaban y vuelve a ponerse cuatro más (la ñapa, la superñapa, la maxiriñapa y la ñapisísima) y así hasta que acaba con ellas.</p><p>Ella quiere escuchar el cuento de los músicos de Bremen cada vez que se sube en el carro al salir de la escuela. Y yo la veo por el retrovisor absolutamente inmersa en la historia. Y se sorprende y se ríe y nos reímos y nos salpica la felicidad en la cara y yo me elevo con una efervescencia deliciosa de orgullo y deleite maternal.</p></article>
+<article class="pg relato"><p>Ella despierta en mí toda la ternura con sus pequeñas obsesiones. Me hace sonreír la solemnidad con la que se levanta tras ponerse su vestido de cola, me inspira con la forma en que se concentra cuando algo le interesa mucho y se entrega a la presencia, me revuelve el guayabo por mi propia y olvidada infancia.</p><p>No sé cuáles eran mis obsesiones cuando era niña. No las recuerdo. ¿Se puede sentir nostalgia por algo que no se recuerda? Yo creo que sí. El corazón recuerda que uno fue niño, aunque los pocos detalles que haya se vean borrosos en un espacio que parece que fue hace cuatro vidas y se diluye en el llanto que abraza a la desmemoria.</p></article>
+<article class="pg relato"><p>Quisiera creer que recuerdo que me obsesionaban las historias de Juan Bobo y Pedro Rimales que nos contaba mi papá, o el sabor de la mezcla de torta que cada sábado preparaba mi mamá, que se obsesionaba con hacer cada sábado una torta con las mismas medidas, los mismos ingredientes, siguiendo los mismos pasos mientras cantaba las mismas canciones tristes que daban fe de su estado interior, del que yo no tuve consciencia hasta que intenté entenderla con el corazón. “De tu mano aprendí a beber agua, fui un gorrión que se quedó preso en tu jaula…”. Quiero pensar que me obsesionaba el pan con mantequilla quemado que me hacía mi abuela Aleja, con jugo de naranja aguado porque éramos 9 nietos corriendo por el pasillo del edificio de Oropeza (que esta semana fue demolido tras quedar inhabitable después del terremoto de junio). O las tardes de bingo en casa de mi abuela Ana, dándole vueltas a la tómbola y recolectando las caraotas para marcar los cartones y las risas de mis tías, mis tíos y mis primas y primos para arroparme el corazón cuando la distancia me enfrió los huesos y me hizo doler el alma.</p></article>
+<article class="pg relato"><p>Me obsesiona no saber cuáles eran mis obsesiones cuando era niña. Me obsesiona pensar que mi hija quizás también pierda el recuerdo de estas pequeñas obsesiones y por eso escribo sobre ellas. Para que haya un rastro que ella pueda seguir hasta la niña que fue. Para que haya un rastro que yo pueda seguir hasta la niña que fue.</p><p>¿Acaso alguien puede recordar sus pequeñas obsesiones?</p><p>Si leíste hasta aquí, gracias por tu tiempo y que disfrutes el viaje hacia tus propias nostalgias.</p><p><a href="https://aleanaadan.substack.com/p/pequenas-obsesiones" target="_blank" rel="noopener">Leerlo en Substack →</a></p></article>
+<article class="pg relato"><span class="tag">Prosa poética</span><p>Camino sin rumbo con el corazón resquebrajado. Intento recordar dónde se abrió la primera grieta. Un amor, varios desamores, unos pocos insultos y un lanzamiento de jarrón. Una pérdida, un despido, varios despidos, la fe extraviada entre tanta nada.</p><p>Veo a un hombre sentado en un banco a la vera de un sendero. Le tiembla el corazón, puedo verlo en sus manos que no paran quietas, como si quisieran arrancarse la piel, como si un escozor insoportable atacara sus dorsos y sus palmas, acostumbradas al volumen del vacío.</p></article>
+<article class="pg relato"><p>Piezas irreconocibles de diferentes tamaños y colores crean una alfombra a sus pies. Una lágrima le cuelga de una pestaña, apenas un destello que le da aparente vida a sus ojos que miran sin mirar un horizonte rojo. En sus hombros parecía reposar el peso de toda la humanidad.</p><p>Me detengo a observarlo como si de un animal exótico se tratase. Como si fuera el único hombre en el mundo revolcándose en el fango del sufrimiento. Como si fuese el único hombre incompleto. Lo miro con pena y, compasiva, me acerco. Ya mi dolor no late solo en este espacio-tiempo que ahora comparto con él. Me siento mejor no siendo el único despojo.</p></article>
+<article class="pg relato"><p>Levanta la mirada extrañado y veo su semblante transformarse. Reconoce la herida suspendida frente a él. Con un gesto casi imperceptible me invita a sentarme. Hombro a hombro nos miramos fijamente sin decir palabra.</p><p>Entonces, en un intento por recordar qué éramos antes de ser despojos, sonrío. Le tomo las manos y las aprieto entre las mías. Él rompe a llorar como cuando tenía 5 años y se caía de un árbol. Lo rodeo con mis brazos y dejo que su llanto me empape la camisa.</p></article>
+<article class="pg relato"><p>Poco después se recompone y vuelve a mirarme con los ojos rotos. “Gracias”, la única palabra que cruza este puente. Sonrío de nuevo y me levanto. Él vuelve a fijar su vista en la línea roja que recorre las montañas.</p><p>Camino unos pocos metros y me giro para verlo por última vez. Se está abrazando a sí mismo. Se me arruga el corazón al darme cuenta de que ha comenzado a recoger sus piezas y a colocarlas de cualquier manera, intentando cubrir los huecos que perforaban su cuerpo.</p><p>La esperanza, por fin, dejó de ser una extraña.</p><p><a href="https://substack.com/@aleanaadan/note/c-343979974" target="_blank" rel="noopener">Leer en Substack →</a></p></article>
+</div>
+
+<footer><p class="th"><img class="fi" src="img/flor-oro.png" alt="">Gracias por tu tiempo</p>
+<p class="soc"><a href="https://instagram.com/aleanaadan" target="_blank" rel="noopener" title="Instagram">In.</a><a href="https://aleanaadan.substack.com" target="_blank" rel="noopener" title="Substack">Sb.</a><a href="https://www.goodreads.com/author/show/52919773.Aleana_Ad_n_Legarra" target="_blank" rel="noopener" title="Goodreads">Gr.</a></p>
+<p class="lg"><a href="aviso-legal.html">Aviso legal</a>·<a href="privacidad.html">Política de privacidad</a>·<a href="cookies.html">Política de cookies</a></p>
+<p class="cp">© 2026 Aleana Adán Legarra · Todos los derechos reservados</p></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+(function(){
+var src=[].slice.call(document.querySelectorAll('#src .pg')),book=document.getElementById('book'),lab=document.getElementById('lab'),pv=document.getElementById('pv'),nx=document.getElementById('nx');
+var mq=window.matchMedia('(max-width:720px)'),FL='<img src="img/flor-oro.png" alt="">',pf=null,mode=mq.matches;
+var VERSO='Retazos de la belleza que me habita';
+function data(single){
+  var cover={c:'dk',hard:1,h:'<div class="cen"><p class="sub">Aleana Adán Legarra</p><h1>Cuaderno</h1><p class="verse">'+VERSO+'</p>'+FL+'</div>'};
+  var fin={h:'<div class="cen"><p class="verse">Hasta aquí,<br>por ahora.</p><p><a class="btn" href="https://aleanaadan.substack.com" target="_blank" rel="noopener">Seguir leyendo en Substack</a></p></div>'};
+  var bk={c:'dk',hard:1,h:'<div class="cen">'+FL+'</div>'};
+  var tx=src.map(function(a,i){return {h:a.outerHTML+'<span class="num">'+(i+1)+'</span>'};});
+  var mid=(single?[]:[{h:''}]).concat(tx,[fin]);
+  if(mid.length%2)mid.push({h:''});
+  return [cover].concat(mid,[bk]);
+}
+/* ---------- Versión realista (librería StPageFlip) ---------- */
+function setH(){var w=book.clientWidth,pw=mq.matches?w:w/2;book.style.height=Math.round(Math.min(735,pw*620/440))+'px';}
+function fit(){[].forEach.call(book.querySelectorAll('.lpage .in'),function(e){var fs=17;e.style.fontSize=fs+'px';while(e.scrollHeight>e.clientHeight+1&&fs>10){fs-=.5;e.style.fontSize=fs+'px';}});}
+function label(p){var n=pf.getPageCount();lab.textContent=p<=0?'Portada':(p>=n-1?'Contraportada':'');pv.disabled=p<=0;nx.disabled=p>=n-1;}
+function initLib(){
+  if(!window.St)throw new Error('sin librería');
+  book.innerHTML='';book.className='book lib';setH();
+  var els=data(mq.matches).map(function(p){var d=document.createElement('div');d.className='lpage'+(p.c?' '+p.c:'');if(p.hard)d.setAttribute('data-density','hard');d.innerHTML='<div class="in">'+p.h+'</div>';return d;});
+  pf=new St.PageFlip(book,{width:440,height:620,size:'stretch',minWidth:260,maxWidth:520,minHeight:370,maxHeight:735,maxShadowOpacity:.5,showCover:true,mobileScrollSupport:false,flippingTime:1000,usePortrait:true,startZIndex:0,autoSize:true,swipeDistance:25,clickEventForward:true});
+  (pf.loadFromHTML||pf.loadFromHtml).call(pf,els);
+  pf.on('flip',function(e){label(e.data);});
+  pv.onclick=function(){pf.flipPrev();};nx.onclick=function(){pf.flipNext();};
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')pf.flipNext();if(e.key==='ArrowLeft')pf.flipPrev();});
+  label(0);setTimeout(fit,250);setTimeout(fit,1200);
+  var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(mq.matches!==mode){location.reload();return;}setH();fit();},300);});
+  setTimeout(function(){var it=book.querySelector('.stf__item');if(!it||it.offsetHeight<40)startCss();},2000);
+}
+/* ---------- Versión de respaldo (CSS) ---------- */
+var cssOn=false;
+function startCss(){
+  if(cssOn)return;cssOn=true;
+  var cur=0,N=0,max=0,single=mq.matches,sheets=[];
+  book.innerHTML='';book.removeAttribute('style');book.className='book'+(single?' single':'');
+  function face(side,p){return '<div class="face '+side+' '+(p.c||'')+'"><div class="in">'+p.h+'</div></div>';}
+  function mk(f,b){var s=document.createElement('div');s.className='sheet';s.innerHTML=f+b;return s;}
+  function zi(i){return i<cur?i+1:N-i;}
+  var P=data(single),k;
+  if(single){N=P.length;max=N-1;P.forEach(function(p){sheets.push(mk(face('front',p),''));});}
+  else{N=P.length/2;max=N;for(k=0;k<N;k++)sheets.push(mk(face('front',P[2*k]),face('back',P[2*k+1])));}
+  sheets.forEach(function(s){book.appendChild(s);});
+  function upd(){
+    sheets.forEach(function(s,i){s.classList.toggle('f',i<cur);if(!s.classList.contains('turn'))s.style.zIndex=zi(i);});
+    book.classList.toggle('c0',!single&&cur===0);book.classList.toggle('c1',!single&&cur===max);
+    pv.disabled=cur===0;nx.disabled=cur===max;lab.textContent=cur===0?'Portada':(!single&&cur===max)?'Contraportada':'';
+  }
+  function go(d){var n=cur+d;if(n<0||n>max)return;var m=d>0?cur:n,s=sheets[m];cur=n;
+    s.classList.remove('turn');void s.offsetWidth;s.classList.add('turn');s.style.zIndex=999;
+    clearTimeout(s._t);s._t=setTimeout(function(){s.classList.remove('turn');s.style.zIndex=zi(m);},1550);upd();}
+  pv.onclick=function(){go(-1);};nx.onclick=function(){go(1);};
+  book.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var r=book.getBoundingClientRect(),x=(e.clientX-r.left)/r.width;go(single?(x<.35?-1:1):(x<.5?-1:1));});
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')go(1);if(e.key==='ArrowLeft')go(-1);});
+  var x0=null;book.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
+  book.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>45){go(d<0?1:-1);e.preventDefault();}x0=null;});
+  mq.addEventListener&&mq.addEventListener('change',function(){location.reload();});
+  upd();
+}
+try{initLib();}catch(err){if(window.console)console.warn(err);startCss();}
+})();
+</script>
+</body>
+</html>
