@@ -74,7 +74,25 @@ footer .th{font:300 1.05rem "Josefin Sans",sans-serif;letter-spacing:.1em;color:
 footer .soc{margin:14px 0 22px;font-size:1.05rem;letter-spacing:.06em}footer .soc a{color:#e3cd9d;text-decoration:none;margin:0 11px}footer .soc a:hover{text-decoration:underline}
 footer .lg a{color:#cfd9cb;margin:0 8px;font-size:.78rem;letter-spacing:.08em}footer .cp{margin-top:14px;font-size:.78rem;opacity:.8}
 .idx{max-width:760px;margin:0 auto;padding:30px 6vw 70px}.idx h2{font-size:1.8rem;text-align:center;margin-bottom:8px}.idx>p{text-align:center;font-size:.95rem}.idx ul{list-style:none;padding:0;margin:26px 0}.idx li{padding:12px 0;border-bottom:1px solid #d6e2cd}.idx li a{font-size:1.15rem;text-decoration:none;display:block}.idx li a:hover{text-decoration:underline}.idx li span{font-size:.85rem;opacity:.75}.idx>p:last-child{margin-top:20px}
-</style>
+
+/* ---- menú móvil ---- */
+.mb{display:none;background:none;border:0;width:48px;height:48px;padding:0;cursor:pointer;position:relative;flex:none;-webkit-tap-highlight-color:transparent}
+.mb span{position:absolute;left:12px;right:12px;height:1.6px;background:var(--deep);border-radius:2px;transition:transform .3s,opacity .2s,top .3s}
+.mb span:nth-child(1){top:17px}.mb span:nth-child(2){top:24px}.mb span:nth-child(3){top:31px}
+.mb[aria-expanded="true"] span:nth-child(1){top:24px;transform:rotate(45deg)}.mb[aria-expanded="true"] span:nth-child(2){opacity:0}.mb[aria-expanded="true"] span:nth-child(3){top:24px;transform:rotate(-45deg)}
+@keyframes mnu{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media(max-width:940px){
+header{flex-wrap:nowrap!important;gap:10px;padding:4px 5vw 4px 6vw}
+.logo{font-size:1.9rem!important}
+.mb{display:block}
+header nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:4px 6vw 14px;background:#fbf8f1;border-bottom:1px solid var(--tint);box-shadow:0 22px 34px rgba(47,79,56,.14)}
+header nav.open{display:flex;animation:mnu .25s ease}
+header nav a{padding:16px 2px;font-size:.84rem;letter-spacing:.22em;border-bottom:1px solid var(--tint)}
+header nav a:last-child{border-bottom:0}
+footer .soc a{display:inline-block;padding:8px 12px;margin:0 4px}
+footer .lg a{display:inline-block;padding:6px 6px}
+}
+@media(max-width:420px){.ctl{gap:8px;padding:20px 0 40px}.ctl .btn{padding:9px 12px;letter-spacing:.14em}.ctl span{min-width:0;font-size:.95rem}}</style>
 <link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="favicon.png"><meta name="description" content="Cuaderno de Aleana Adán Legarra: poemas, relatos y reflexiones, retazos de la belleza que me habita. Pasa las páginas despacio.">
 <link rel="canonical" href="https://aleanaadanlegarra.com/cuaderno.html">
 <meta name="author" content="Aleana Adán Legarra">
@@ -84,7 +102,7 @@ footer .lg a{color:#cfd9cb;margin:0 8px;font-size:.78rem;letter-spacing:.08em}fo
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Cuaderno", "url": "https://aleanaadanlegarra.com/cuaderno.html", "inLanguage": "es", "author": {"@type": "Person", "name": "Aleana Adán Legarra", "url": "https://aleanaadanlegarra.com/"}, "blogPost": [{"@type": "CreativeWork", "name": "Soledad", "url": "https://aleanaadanlegarra.com/soledad.html"}, {"@type": "CreativeWork", "name": "Rumor", "url": "https://aleanaadanlegarra.com/rumor.html"}, {"@type": "CreativeWork", "name": "Una tarde cualquiera", "url": "https://aleanaadanlegarra.com/una-tarde-cualquiera.html"}, {"@type": "CreativeWork", "name": "Acaríciame un momento", "url": "https://aleanaadanlegarra.com/acariciame-un-momento.html"}, {"@type": "CreativeWork", "name": "El vacío", "url": "https://aleanaadanlegarra.com/el-vacio.html"}, {"@type": "CreativeWork", "name": "Desintegrada", "url": "https://aleanaadanlegarra.com/desintegrada.html"}]}</script>
 </head>
 <body>
-<header><a class="logo" href="index.html">Aleana Adán Legarra</a><nav><a href="index.html#escritora">La escritora</a><a href="cuaderno.html">Cuaderno</a><a href="index.html#libros">Libros</a><a href="agenda.html">Agenda 2027</a><a href="index.html#persona">La persona</a><a href="index.html#fotografa">La fotógrafa</a><a href="index.html#contacto">Contacto</a></nav></header>
+<header><a class="logo" href="index.html">Aleana Adán Legarra</a><button class="mb" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button><nav id="menu" aria-label="Menú principal"><a href="index.html#escritora">La escritora</a><a href="cuaderno.html">Cuaderno</a><a href="index.html#libros">Libros</a><a href="agenda.html">Agenda 2027</a><a href="index.html#persona">La persona</a><a href="index.html#fotografa">La fotógrafa</a><a href="index.html#contacto">Contacto</a></nav></header>
 
 <div class="top"><p class="sub">Substack</p><h1>Cuaderno</h1><p class="verse">Retazos de la belleza que me habita</p></div>
 
@@ -181,5 +199,5 @@ function startCss(){
 try{initLib();}catch(err){if(window.console)console.warn(err);startCss();}
 })();
 </script>
-</body>
+<script>(function(){var b=document.querySelector('.mb'),n=document.getElementById('menu');if(!b||!n)return;function c(){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Abrir menú');}b.addEventListener('click',function(e){e.stopPropagation();var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');});n.addEventListener('click',function(e){if(e.target.closest('a'))c();});document.addEventListener('click',function(e){if(!e.target.closest('header'))c();});document.addEventListener('keydown',function(e){if(e.key==='Escape')c();});window.addEventListener('resize',function(){if(window.innerWidth>940)c();});})();</script></body>
 </html>
